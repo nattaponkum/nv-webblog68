@@ -1,4 +1,4 @@
-// const isAuthenController = require('./controllers/isAuthenController')
+const isAuthenController = require('./controllers/isAuthenController')
 const UserController = require('./controllers/UserController')
 const UserAuthenController = require('./controllers/UserAuthenController')
 // const BlogController = require('./controllers/BlogController')
@@ -9,7 +9,7 @@ module.exports = (app) => {
   // เส้นทางเดิมจากบทที่ 4 (ถ้าอยากเก็บไว้)
   // app.get('/status', (req, res) => res.send('server is running'))
   // เส้นทางใหม่สำหรับ User Management แบบ MVC
-  app.get('/users', /* isAuthenController, */ UserController.index)
+  app.get('/users', isAuthenController, UserController.index)
   app.post('/user', UserController.create)
   app.put('/user/:userId', UserController.put)
   app.delete('/user/:userId', UserController.remove)
